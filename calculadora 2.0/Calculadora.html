@@ -1,0 +1,107 @@
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/bootstrap.css" />
+		<link rel="stylesheet" href="css/bootstrap-theme.css" />
+		<title>Validando Formulários com Javascript</title>
+
+		
+		<script type="text/javascript">
+			function operacao(){
+				var operacao = document.getElementById("operacao").value;
+				console.log(operacao);
+					if(operacao=="multiplicacao" ){
+						multiplicacao();
+					}else if(operacao=="somarValores"){
+						somarValores();
+					}else if(operacao=="subtracao"){
+						subtracao();
+					}else if(operacao="divisao"){
+						divisao();
+					}
+				 
+
+				}
+			function multiplicacao(){
+
+				var n1 = document.getElementById("n1").value;
+				n1=parseInt(n1);
+				console.log(n1);
+				var n2 = parseInt(document.getElementById("n2").value);
+				console.log(n2);
+				var n3 = n1*n2;
+				console.log(n3);
+				console.log(document.getElementById("resultado"));
+				document.getElementById("resultado").innerHTML = n3;
+				
+			}
+			function somarValores(){
+
+				var n1 = document.getElementById("n1").value;
+				n1=parseInt(n1);
+				console.log(n1);
+				var n2 = parseInt(document.getElementById("n2").value);
+				console.log(n2);
+				var n3 = n1+n2;
+				console.log(n3);
+				console.log(document.getElementById("resultado"));
+				document.getElementById("resultado").innerHTML = n3;
+
+}
+			function subtracao(){
+
+				var n1 = document.getElementById("n1").value;
+				n1=parseInt(n1);
+				console.log(n1);
+				var n2 = parseInt(document.getElementById("n2").value);
+				console.log(n2);
+				var n3 = n1-n2;
+				console.log(n3);
+				console.log(document.getElementById("resultado"));
+				document.getElementById("resultado").innerHTML = n3;
+
+				}
+				function divisao(){
+
+				var n1 = document.getElementById("n1").value;
+				n1=parseInt(n1);
+				console.log(n1);
+				var n2 = parseInt(document.getElementById("n2").value);
+				if(n2 != 0){
+					console.log(n2);
+				var n3 = n1/n2;
+				console.log(n3);
+				console.log(document.getElementById("resultado"));
+				document.getElementById("resultado").innerHTML = n3;
+				}
+				else{
+					document.getElementById("resultado").innerHTML = "Não foi possivel dividir por 0";
+				}
+				
+}
+			</script>
+	</head>
+	<body class="container">
+		<h1 class="text-center">Validando Formulários JS</h1>
+			<div class="-formgroup">
+				<label for="data">Resultado:</label> 
+				<div id="resultado"></div>
+			</div>
+			<div class="form-group">
+				<label for="data">Numero1</label>
+				<input type="number" name="numero1" id="n1" class="form-control" />
+			</div>
+			<div class="form-group">
+				<label for="data">Numero2</label>
+				<input type="number" name="numero2" id="n2" class="form-control" />
+			</div>
+			<select id="operacao">
+				<option value="somarValores">+</option>>
+				<option value="subtracao">-</option>>
+				<option value="divisao">/</option>>
+				<option value="multiplicacao">*</option>
+			</select>
+			<button onclick="operacao();">Resolução do Cálculo</button>
+	</body>
+</html>
